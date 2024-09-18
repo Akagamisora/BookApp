@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <header class="mb-4">
+            <h1 class="text-3xl font-bold">蔵書管理アプリ</h1>
+            <nav class="mt-4">
+                <a href="{% url 'book_list' %}" class="text-blue-500 hover:underline mr-4">書籍一覧</a>
+                <a href="{% url 'add_book' %}" class="text-blue-500 hover:underline mr-4">書籍を追加</a>
+                <a href="{% url 'logout' %}" class="text-red-500 hover:underline">ログアウト</a>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

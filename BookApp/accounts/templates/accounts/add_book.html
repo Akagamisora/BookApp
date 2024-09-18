@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}書籍を追加{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">書籍を追加</h2>
+<form method="post" class="bg-white p-6 rounded-lg shadow-md">
+    {% csrf_token %}
+    <div class="mb-4">
+        <label for="title" class="block text-sm font-medium text-gray-700">Title:</label>
+        {{ form.title }}
+    </div>
+    <div class="mb-4">
+        <label for="author" class="block text-sm font-medium text-gray-700">Author:</label>
+        {{ form.author }}
+    </div>
+    <div class="mb-4">
+        <label for="publish_date" class="block text-sm font-medium text-gray-700">Publish date:</label>
+        {{ form.publish_date }}
+    </div>
+    <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
+        {{ form.description }}
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">追加</button>
+</form>
+{% endblock %}
